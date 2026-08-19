@@ -2,16 +2,16 @@
 
 [![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.241127.svg)](https://zenodo.org/record/241127)
 
-[![Travis CI](https://travis-ci.org/space-physics/dmcutils.svg)](https://travis-ci.org/space-physics/dmcutils)
-[![pypi versions](https://img.shields.io/pypi/pyversions/dmcutils.svg)](https://pypi.python.org/pypi/dmcutils)
-[![PyPi Download stats](http://pepy.tech/badge/dmcutils)](http://pepy.tech/project/dmcutils)
-
 Programs used to help with the Dual-Multi-sCale (DMC) experiment.
 Example of dealing with 100000 - 1 million Andor Neo spool files in a fast way.
 
 ## Installation
 
-    python -m pip install -e .
+```
+git clone https://github.com/space-physics/dmcutils
+
+python -m pip install -e ./dmcutils
+```
 
 ## Functions
 
@@ -20,8 +20,9 @@ Example of dealing with 100000 - 1 million Andor Neo spool files in a fast way.
 
 ## Notes
 
-[Install Matlab Engine](https://www.scivision.dev/matlab-engine-callable-from-python-how-to-install-and-setup/)
-optional, just for corrupted 2010 Solis files.
+[Matlab Engine for Python](https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html)
+is optional.
+It's only used for corrupted 2010-era Solis files.
 
 ---
 

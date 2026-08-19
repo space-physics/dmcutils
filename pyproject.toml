@@ -1,5 +1,45 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dmcutils"
+version = "0.9.3"
+description = "Utilities to read and plot DMC Experiment data"
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.10"
+keywords = ["camera", "aurora"]
+license = { file = "LICENSE.txt" }
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Atmospheric Science",
+]
+dependencies = [
+  "python-dateutil",
+  "pandas",
+  "h5py",
+  "scikit-image",
+  "imageio",
+  "histutils",
+  "morecvutils",
+]
+
+[project.optional-dependencies]
+tests = ["pytest"]
+lint = ["flake8", "mypy"]
+plot = ["matplotlib"]
+io = ["astrometry_azel"]
+web = ["flask", "flask-limiter"]
 
 [tool.black]
 line-length = 100
+
+[tool.mypy]
+files = ["."]
+ignore_missing_imports = true
+strict_optional = false
+allow_redefinition = true
