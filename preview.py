@@ -1,8 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 Web server polling latest image (averaged over spool file) for Andor Neo Spool Files
-uses OpenCV 3 with Python 3.6
-Michael Hirsch
+uses OpenCV
 
 Prereqs: python -m pip install flask flask-limiter
 

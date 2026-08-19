@@ -6,12 +6,12 @@ function [mont,allTick] = NeoMontage(spoolDir,varargin)
 % montage() DisplayRange work:
 % https://savannah.gnu.org/bugs/index.php?46259
 %
-% NOTE: If using Octave on Cygwin or Linux be sure you have 
+% NOTE: If using Octave on Cygwin or Linux be sure you have
 %  epstool transfig pstoedit
 % installed or you'll get a blank montage (or any other figure you try to save to disk).
 %
 % inputs:
-% ------- 
+% -------
 % spoolDir: where the 100,000 Neo spool files .dat are located
 % outDir: where to place output, [] uses SpoolDir
 % ny: number of y-pixels in Neo image  FIXME in acquisitionmetadata.ini
@@ -20,8 +20,6 @@ function [mont,allTick] = NeoMontage(spoolDir,varargin)
 % skip: take every Nth file, IN ORDER OF FILE NAME--WHICH IS NOT NECESSARILY TIME ORDER!!
 % thumbnailWidth: width of thumbnails in pixels (default 128)
 %
-% designed/tested for Octave 3.6 with Cygwin under Windows 7
-% Michael Hirsch Oct 2012
 % tested to take 5 minutes overall for a 21,000 file directory, taking every 100th file i.e. touching 210 files with mean of all frames in these files.
 
 try %for Octave
@@ -57,7 +55,7 @@ flist = dir(dTemplate); %<-- Very slow for 100,000 files!
 %use linux to vastly speed up work
 %[err,SpoolFN2] = unix(['ls ',spoolDir]);
 %if err, error(['Could not stat ',spoolDir]), end
-%SpoolFN2 = textscan(SpoolFN2,'%s'); 
+%SpoolFN2 = textscan(SpoolFN2,'%s');
 %SpoolFN2 = SpoolFN2{1};
 nSpool = length(flist);
 if ~nSpool, error(['no files found with ',dTemplate]), end
@@ -70,7 +68,7 @@ nFile = length(fInd);
 allTick = zeros(nFile,1,'uint64'); %for many files case, OK
 
 data = zeros(ny,nx,1,nFile,'uint16'); %montage() requires this kind of 4-D grayscale matrix
-j = 1; 
+j = 1;
 t=0; %for fits case
 tic
 for i = fInd
@@ -83,7 +81,7 @@ for i = fInd
     end
     %do mean of frames (time averaging)
     if nFile>1
-        data(:,:,1,j) = mean(d,3); 
+        data(:,:,1,j) = mean(d,3);
         allTick(j) = t(1); %NOTE: chose to take first frame index averaged as tick number.
     else %montage of single file
         for ii = 1:size(d,3)

@@ -23,16 +23,12 @@ dependencies = [
   "pandas",
   "h5py",
   "scikit-image",
-  "imageio",
-  "histutils",
-  "morecvutils",
+  "imageio"
 ]
 
 [project.optional-dependencies]
-tests = ["pytest"]
-lint = ["flake8", "mypy"]
+tests = ["pytest", "mypy"]
 plot = ["matplotlib"]
-io = ["astrometry_azel"]
 web = ["flask", "flask-limiter"]
 
 [tool.black]

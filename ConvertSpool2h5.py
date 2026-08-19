@@ -1,8 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
-Michael Hirsch
-Sept 2015
-
 Streams data from  spool file input disk to HDF5 output disk (both USB HDD) at 35 MB/s. Did not attempt to optimize.
 
 Example performance: 4128 spool files selected by Detect.py, each with 47 320x270 images  33.5 GB -> HDF5 21.6 GB compression=1 in 948.5 sec.

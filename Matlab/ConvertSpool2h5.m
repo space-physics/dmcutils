@@ -1,12 +1,10 @@
 function ConvertSpool2h5(varargin)
-% given a Neo 
-% * 12bit packed spool directory (with the corrupted 2008 Andor Solis beta files) 
+% given a Neo
+% * 12bit packed spool directory (with the corrupted 2008 Andor Solis beta files)
 % * 16bit 2012-2015 spool file
 % read all the images in that directory and convert to HDF5
 % That is, very many .dat spool files from a single directory are converted to
 % one big HDF5 file.
-%
-% Michael Hirsch
 %
 % CAVEAT: h5create() does not allow for compound dataset create, you have
 % to use low-level commands
@@ -34,9 +32,9 @@ else
 end
 [~,basename] = fileparts(full);
 if isempty(U.outfn)
-    outfn = expanduser([U.spooldir,'/',basename,'.h5']);
+    outfn = fullfile(U.spooldir,filesep,basename,'.h5');
 else
-    outfn = expanduser(U.outfn);
+    outfn = U.outfn;
 end
 disp(['writing to ',outfn])
 %% read
@@ -55,8 +53,8 @@ for i = 1:nfiles
         error(['unknown bit depth ',int2str(bits)])
     end %if
 
-    disp([int2str(i),' / ',int2str(nfiles)])  
-    
+    disp([int2str(i),' / ',int2str(nfiles)])
+
     h5write(outfn,'/rawimg',transpose(data),[1,1,i],[U.nx,U.ny,1])
 end
 %% output hdf5

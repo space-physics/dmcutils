@@ -5,7 +5,6 @@ function NeoKeogramExtraction(DataDir,varargin)
 % program relies on ImageJ to extract frames from FITS and TIFF
 %
 % Designed for Cygwin on Windows 7 with Octave and ImageJ
-% Michael Hirsch Dec 2012
 %
 % INPUTS:
 % -----------
@@ -27,17 +26,17 @@ data.displayKeo = true; %usually false
 % (3) run displayKeogram.m on the slices
 % (4) delete slices, move on to next FITS/TIFF file
 % (5) display grand keogram
-% 
+%
 
 % (1) list all files
  AllFN = dir(DataDir);
- 
+
 
 % (3) make keogram
 displayKeogram2(DataDir,data)
 
 % (4) delete slices
- 
+
 
 
 end

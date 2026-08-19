@@ -87,7 +87,7 @@ def loadplot(imgfn, calfn, israzel, isrvalid, showmovie, writemovie):
 
         if showmovie or writemovie:
             Writer = anim.writers["ffmpeg"]
-            writer = Writer(fps=5, metadata={"artist": "Michael Hirsch"}, codec="ffv1")
+            writer = Writer(fps=5, codec="ffv1")
             if writemovie:
                 ofn = imgfn.rsplit(".", 1)[0] + ".mkv"
 

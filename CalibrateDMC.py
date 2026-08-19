@@ -3,8 +3,6 @@
 the CCD data was the first frame of irs_archive1/DMC/DataField/2012-11-22ccd.7z/spool.fits on our internal server.
 
 can accept input files in .h5 .fits and more
-
-Michael Hirsch
 """
 from pathlib import Path
 from tempfile import mkstemp

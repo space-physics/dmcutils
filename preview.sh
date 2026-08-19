@@ -1,7 +1,6 @@
 #!/bin/bash
 # simple web server with polling of latest image for Andor Neo Spool Files
-# uses OpenCV 3.2 with Python 3.6
-# Michael Hirsch
+# uses OpenCV
 #
 # Prereqs: pip install flask flask-limiter
 #
@@ -22,7 +21,7 @@ ret=$?
 ##### we use Windows Anaconda on Windows, arbitrary choice.
 
 #### every N seconds (600=10 minutes) update the preview.
-# Note because of non-sequential file naming, this takes a few minutes each time, 
+# Note because of non-sequential file naming, this takes a few minutes each time,
 # proportional to the rapidly increasing number of spool files...
 while :; do
     (cd ../andor-scmos-examples

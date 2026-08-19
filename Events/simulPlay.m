@@ -30,8 +30,6 @@ function [ccd, cmos,both] = simulPlay(ccd,cmos,both,U)
 %
 % We assume the PC doesn't have enough RAM to load all the files at once,
 % so we load and play frame-by-frame
-%
-% Michael Hirsch Dec 2012
 
 % example:
 % ccd.stem = '2012-12-20/CCD/2012-12-20T22-48-34_frames_317600-1-339300.tif';

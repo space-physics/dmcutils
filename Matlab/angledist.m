@@ -1,15 +1,13 @@
 function angdistdeg = angledist(az1,el1,az2,el2)
 %%
 % computes angular distance for a pair of points given the azimuth, elevation of each
-% point.  
+% point.
 % A demonstration of calling Python functions from Matlab R2014b or newer
 %
 % input and output are in DEGREES and scalar.
 % if you want to work with arrays, consider that as of Matlab R2015b you need a
 % conversion from Numpy NDarray to Matlab array:
 %  http://www.mathworks.com/matlabcentral/answers/157347-convert-python-numpy-array-to-double#comment_283741
-%
-% Michael Hirsch
 
 try
     if length(az1)~=1 || length(el1) ~= 1 || length(az2) ~= 1 || length(el2) ~=1
@@ -27,5 +25,5 @@ catch e
         rethrow(e)
     else
         rethrow(e)
-    end   
+    end
 end

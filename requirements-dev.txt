@@ -1,0 +1,3 @@
+https://github.com/space-physics/histutils
+https://github.com/scivision/morecvutils
+https://github.com/space-physics/astrometry_geomap

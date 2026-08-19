@@ -1,6 +1,4 @@
 %% RunSimulPlay
-% Michael Hirsch 2013
-% requires Octave 4.0+ or Matlab
 % plays CCD and CMOS video time-synched
 %
 % requires Neo data to be one multi-page TIFF
@@ -63,4 +61,3 @@ cmos.startUT =cmos.fullFileStart + ...
 [ccd,cmos,both] = simulPlay(ccd,cmos,both,U);
 
 end %function
-
